@@ -1,0 +1,45 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class GuessingGame : MonoBehaviour
+{
+    private int _numeroAleatorio;
+    public int inicioDoIntervalo;
+    public int fimDoIntervalo;
+    public int insiraNumero;
+    private int _diferenca;
+    // Start is called before the first frame update
+    void Start()
+    {
+        _numeroAleatorio = Random.Range(inicioDoIntervalo, fimDoIntervalo);
+         print($"Numero declarado {insiraNumero}");
+         print($"Numero aleatorio {_numeroAleatorio}");
+        
+        if (insiraNumero == _numeroAleatorio)
+        {
+            print("O numero e igual");
+        }
+        else if (insiraNumero > _numeroAleatorio)
+        {
+            print("O numero e maior");
+        }
+        else
+        {
+            print("numero e menor");
+        }
+
+        _diferenca = Mathf.Abs(insiraNumero - _numeroAleatorio);
+        
+        print($"A diferença entre os numeros são {_diferenca}");
+        
+
+    }
+    
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+}
